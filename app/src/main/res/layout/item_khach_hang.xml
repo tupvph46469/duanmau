@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:background="@drawable/item_border"
+        android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="250px"
+            android:layout_height="150px"
+            android:src="@drawable/nhanvien"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_ten_dn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="30px"
+                    android:text="user name : "
+                    />
+
+
+                <ImageView
+                    android:id="@+id/img_sua_khachHang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_update_24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_Gmail"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="30px"
+                    android:text="Gmail:"
+                    />
+
+
+
+                <ImageView
+                    android:layout_width="61px"
+                    android:layout_height="60px"
+                    android:src="@drawable/baseline_delete_24"
+                    android:id="@+id/img_xoa_khachHang"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>

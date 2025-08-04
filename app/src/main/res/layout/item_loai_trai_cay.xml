@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="30px"
+    android:padding="20px"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:background="@drawable/item_border"
+    android:layout_height="250px">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="250px"
+            android:layout_height="150px"
+            android:src="@drawable/baseline_donut_small_24"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_loaiTraiCay"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="30px"
+                android:text="loai trai cay"
+                />
+
+            <ImageView
+
+                android:id="@+id/img_sua_loaiTraiCay"
+                android:layout_width="wrap_content"
+                android:layout_height="60px"
+                android:layout_marginRight="30px"
+                android:src="@drawable/baseline_update_24" />
+
+
+            <ImageView
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:src="@drawable/baseline_delete_24"
+                android:id="@+id/img_xoa_loaiTraiCay"/>
+        </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

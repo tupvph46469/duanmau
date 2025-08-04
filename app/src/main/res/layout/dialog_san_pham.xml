@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="30px"
+    android:background="@drawable/item_border"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sản phẩm"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_ten_sanPham"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên sản phẩm"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_soLuong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Nhập số lượng"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_giaTien"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="Nhập giá tiền"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_moTa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập mô tả sản phẩm"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80px"
+            android:textStyle="bold"
+            android:text="Loại trái cây :  "/>
+
+        <Spinner
+            android:id="@+id/spn_sanPham"
+            android:layout_width="match_parent"
+            android:layout_height="80px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30px"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_huy_sanPham"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:layout_marginRight="30px"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_add_sanPham"
+            android:layout_width="0dp"
+            android:text="Đồng ý"
+            android:layout_marginLeft="30px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40px">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điều khoản - chính sách"
+        android:layout_marginTop="30px"
+        android:layout_gravity="center"
+        android:textSize="60px"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50px"
+        android:textSize="15dp"
+        android:text="Chúng tôi là hộ kinh doanh CTJADE, có trụ sở tại: số 288A1 Nam Kỳ Khởi Nghĩa, phường Võ Thị Sáu, quận 3, Tp. Hồ Chí Minh. Hoạt động theo Giấy Chứng nhận đăng ký hộ kinh doanh số 41C8018425 cấp lần đầu ngày ngày 09/09/2015, đăng ký thay đổi lần 2 ngày 09/05/2022 cấp bởi Phòng kinh tế -  UBND quận 3, Tp. Hồ Chí Minh (sau đây gọi tắt là “CTJADE” hoặc “Chúng tôi”). Website thương mại điện tử Ctjade.vn này được thành lập ngày [*] và đã được đăng ký chính thức với Bộ Công thương Việt Nam.
+
+Khách Hàng bao gồm toàn bộ cá nhân, pháp nhân, tổ chức, đoàn thể có mong muốn tìm hiểu/mua bán/liên hệ với Chúng tôi và/hoặc đã truy cập website của Chúng tôi. Khi Khách Hàng truy cập vào website của Chúng tôi (sau đây gọi tắt là “CTJADE”) có nghĩa là Khách Hàng đồng ý với các Điều khoản và Chính sách này. Vui lòng đọc kỹ Điều khoản và Chính sách dưới đây để hiểu rõ quyền lợi và nghĩa vụ hợp pháp của Khách Hàng đối với CTJADE.
+
+Chúng tôi có quyền thay đổi, chỉnh sửa, thêm hoặc lược bỏ bất kỳ phần nào trong Điều khoản và Chính sách này, vào bất cứ lúc nào. Các thay đổi có hiệu lực ngay khi được đăng trên website mà không cần thông báo trước. Và khi Khách Hàng tiếp tục sử dụng website sau khi các thay đổi về Điều khoản  và Chính sách này được đăng tải, có nghĩa là Khách Hàng chấp nhận với những thay đổi đó. Khách Hàng vui lòng kiểm tra thường xuyên để cập nhật những thay đổi của Chúng tôi."
+        android:layout_weight="1" />
+
+</LinearLayout>

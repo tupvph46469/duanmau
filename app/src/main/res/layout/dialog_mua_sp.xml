@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_border"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giỏ hàng"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_soLuong_gioHang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Nhập số lượng muốn mua"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_them_gio_hang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm vào giỏ hàng"
+        android:backgroundTint="#75F81111"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

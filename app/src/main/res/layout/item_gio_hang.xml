@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="30px"
+    android:padding="30px"
+    android:orientation="vertical"
+    android:background="@drawable/item_border"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:id="@+id/txt_tenSP_gioHang"
+                    android:text="tensp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30px"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="số lượng"
+                    android:textStyle="bold"
+                    android:id="@+id/txt_soLuong_gioHang"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/img_xoa_gioHang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_delete_24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30px"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="giá tiền"
+                    android:id="@+id/txt_giaTien_gioHang"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
