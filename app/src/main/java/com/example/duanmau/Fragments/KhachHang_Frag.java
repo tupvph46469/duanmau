@@ -20,5 +20,23 @@ import java.util.ArrayList;
 
 
 public class KhachHang_Frag extends Fragment  {
+    private RecyclerView rcv_khachHang;
+    private DangKyDAO dangKyDAO;
+    private KhachHangAdapter khachHangAdapter;
+    private ArrayList<DangKyDTO> listKhachHang;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.khach_hang_fragment, container, false);
+        rcv_khachHang = view.findViewById(R.id.rcv_khachHang);
+        dangKyDAO = new DangKyDAO(getContext());
+        listKhachHang = dangKyDAO.getList();
+        khachHangAdapter = new KhachHangAdapter(getContext(), listKhachHang);
+
+        rcv_khachHang.setLayoutManager(new LinearLayoutManager(getContext()));
+        rcv_khachHang.setAdapter(khachHangAdapter);
+        return view;
+    }
 
 }

@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     android:background="#4DFFEB3B"
     >
-
-
-
     <ImageView
         android:layout_width="400px"
         android:layout_height="200px"
@@ -17,7 +14,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nhóm 8 - Dự án 1"
+        android:text="Phạm Văn Tứ"
         android:layout_margin="10dp"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -25,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="............Dự án 1..........."
+        android:text="............Dự án mẫu..........."
         android:layout_margin="10dp"
         android:gravity="center"/>
 

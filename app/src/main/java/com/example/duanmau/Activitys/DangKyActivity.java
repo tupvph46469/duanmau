@@ -1,81 +1,76 @@
-
 package com.example.duanmau.Activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.duanmau.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.example.duanmau.DAO.DangKyDAO;
+import com.example.duanmau.DTO.DangKyDTO;
+import com.example.duanmau.R;
 
 public class DangKyActivity extends AppCompatActivity {
-
-    private TextInputEditText edtTenDangNhap, edtMatKhau, edtNhapLaiMk, edtGmail;
-    private Button btnDangKy, btnHuy;
+    DangKyDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dang_ky_activity); // sửa lại tên layout nếu cần
+        setContentView(R.layout.dang_ky_activity);
 
-        // Ánh xạ view
-        edtTenDangNhap = findViewById(R.id.edt_TenDangNhap_dky);
-        edtMatKhau = findViewById(R.id.edt_matkhau_dky);
-        edtNhapLaiMk = findViewById(R.id.edt_nhaplaiMk_dky);
-        edtGmail = findViewById(R.id.edt_Gmail_dky);
-        btnDangKy = findViewById(R.id.btn_ok_dky);
-        btnHuy = findViewById(R.id.btnHuy_dky);
+        dao = new DangKyDAO(this);
 
-        // Xử lý nút "Đăng ký"
-        btnDangKy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dangKy();
-            }
-        });
+        TextInputEditText edt_tenDangNhap = findViewById(R.id.edt_TenDangNhap_dky);
+        TextInputEditText edtMatKhau = findViewById(R.id.edt_matkhau_dky);
+        TextInputEditText edtNhapLaiMk = findViewById(R.id.edt_nhaplaiMk_dky);
+        TextInputEditText edt_Gmail = findViewById(R.id.edt_Gmail_dky);
+        Button btnOkDangKy = findViewById(R.id.btn_ok_dky);
+        Button btnHuy = findViewById(R.id.btnHuy_dky);
 
-        // Xử lý nút "Hủy"
         btnHuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Quay lại màn trước
+                startActivity(new Intent(DangKyActivity.this, DangNhapActivity.class));
             }
         });
-    }
 
-    private void dangKy() {
-        String tenDangNhap = edtTenDangNhap.getText().toString().trim();
-        String matKhau = edtMatKhau.getText().toString().trim();
-        String nhapLaiMk = edtNhapLaiMk.getText().toString().trim();
-        String gmail = edtGmail.getText().toString().trim();
+        btnOkDangKy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String matKhau = edtMatKhau.getText().toString();
+                String nhapLaiMk = edtNhapLaiMk.getText().toString();
+                String tenDN = edt_tenDangNhap.getText().toString();
+                String gmail = edt_Gmail.getText().toString();
 
-        // Kiểm tra dữ liệu nhập
-        if (tenDangNhap.isEmpty() || matKhau.isEmpty() || nhapLaiMk.isEmpty() || gmail.isEmpty()) {
-            Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
-            return;
-        }
+                if (matKhau.equals(nhapLaiMk)) {
+                    if (isValidEmail(gmail)) {
+                        DangKyDTO dto = new DangKyDTO();
+                        dto.setMatKhau(matKhau);
+                        dto.setTenDN(tenDN);
+                        dto.setGmail(gmail);
 
-        if (!matKhau.equals(nhapLaiMk)) {
-            Toast.makeText(this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
-            return;
-        }
+                        long kq = dao.Them(dto);
+                        if (kq > 0) {
+                            startActivity(new Intent(DangKyActivity.this, DangNhapActivity.class));
+                            Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Địa chỉ Gmail không hợp lệ", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(gmail).matches()) {
-            Toast.makeText(this, "Email không hợp lệ", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            private boolean isValidEmail(CharSequence target) {
+                return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+            }
+        });
 
-        // Nếu có API, bạn gọi Retrofit hoặc POST ở đây
-        // Nếu không, ta chỉ giả lập thành công
-        Toast.makeText(this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-
-        // Có thể chuyển về màn login
-        Intent intent = new Intent(DangKyActivity.this, DangNhapActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

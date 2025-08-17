@@ -5,7 +5,7 @@
     import android.database.sqlite.SQLiteOpenHelper;
 
     public class Dbhelper extends SQLiteOpenHelper {
-        public Dbhelper(Context context) {
+        public Dbhelper( Context context) {
             super(context, "duan1.db", null, 1);
         }
 
@@ -13,7 +13,7 @@
         public void onCreate(SQLiteDatabase db) {
             // Đăng ký, đăng nhập nhé
             db.execSQL("CREATE TABLE tb_dky (id INTEGER PRIMARY KEY AUTOINCREMENT, tenDN TEXT NOT NULL, matKhau TEXT NOT NULL, gmail TEXT NOT NULL)");
-            db.execSQL("INSERT INTO tb_dky (tenDN, matKhau, gmail) VALUES ('admin', 'admin' , 'admin@gmail.com')");
+            db.execSQL("INSERT INTO tb_dky (tenDN, matKhau, gmail) VALUES ('admin', '123' , 'admin@gmail.com')");
             db.execSQL("INSERT INTO tb_dky (tenDN, matKhau, gmail) VALUES ('tu', '123', 'tu@gmail.com')");
 
             //bảng snar phẩm
@@ -24,7 +24,7 @@
             //bảng giỏ hàng
             db.execSQL("CREATE TABLE tb_gioHang (id INTEGER PRIMARY KEY AUTOINCREMENT, tenSP TEXT, giaTien TEXT, soLuongGioHang TEXT, giaTienMoi TEXT);");
 
-    //        //baảng thanh toán
+    //        //bảng thanh toán
             db.execSQL("CREATE TABLE tb_hoaDon (id INTEGER PRIMARY KEY AUTOINCREMENT, tenDN TEXT, tenSP TEXT, soLuong TEXT, giaTienMoi TEXT);");
 
 
